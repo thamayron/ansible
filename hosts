@@ -1,0 +1,22 @@
+[all:vars]
+ansible_user=USER_HERE
+ansible_password=USER_PASSWORD_HERE
+ansible_become_password=USER_ROOT_PASSWORD_HERE
+ansible_connection=network_cli
+ansible_become=yes
+ansible_become_method=enable
+gather_facts=false
+
+[hosts_cisco]
+SW_CORE ansible_host=HOST_IP_ADDRESS
+
+[hosts_cisco:vars]
+ansible_network_os=ios
+
+[hosts_huawei]
+HOST_IP_ADDRESS
+HOSTNAME
+
+[hosts_huawei:vars]
+ansible_network_os=ce
+interpreter_python=/usr/bin/python3

@@ -1,0 +1,23 @@
+---
+- name: Rotina de backup de hosts Cisco
+  hosts: hosts_cisco
+  gather_facts: no
+
+  tasks:
+    - name: Backup host config - Cisco
+      ios_config:
+        backup: yes
+        backup_options:
+          dir_path: "/home/ansible-git/{{ inventory_hostname }}"
+
+- name: Rotina de backup de hosts Huawei
+  hosts: hosts_huawei
+  gather_facts: no
+
+  tasks:
+    - name: Backup host config - Huawei
+      ce_config:
+        backup: yes
+        backup_options:
+          dir_path: "/home/ansible-git/{{ inventory_hostname }}"
+
