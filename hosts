@@ -8,14 +8,24 @@ ansible_become_method=enable
 gather_facts=false
 
 [hosts_cisco]
-SW_CORE ansible_host=HOST_IP_ADDRESS
+# definir host, modo 1
+HOSTNAME ansible_host=HOST_IP_ADDRESS
+# exemplo de utilizacao
+SW_CISCO ansible_host=10.0.0.1
 
 [hosts_cisco:vars]
 ansible_network_os=ios
 
 [hosts_huawei]
+# definir host, modo 2
 HOST_IP_ADDRESS
-HOSTNAME
+# exemplo de utilizacao
+10.0.0.3
+
+# definir host, modo 3
+HOSTNAME 
+# exemplo de utilizacao
+SWICH_HUAWEI2
 
 [hosts_huawei:vars]
 ansible_network_os=ce
